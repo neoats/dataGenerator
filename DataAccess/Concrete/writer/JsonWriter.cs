@@ -19,9 +19,9 @@ public class JsonWriter : IWriter
     }
 
 
-    public void Write<T>(IEnumerable<T> items)
+    public void Write<T>(IEnumerable<T> items,string filename)
     {
-        string newFilePath = Path.Combine(Path.GetDirectoryName(_filePath), "newjobs.json");
+        string newFilePath = Path.Combine(Path.GetDirectoryName(_filePath), $"{filename}.json");
         var uniqueStrings = new HashSet<T>(items);
         var json = JsonConvert.SerializeObject(uniqueStrings, Formatting.Indented);
         using (StreamWriter writer = new StreamWriter(newFilePath))

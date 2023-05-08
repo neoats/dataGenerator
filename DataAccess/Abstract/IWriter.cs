@@ -3,5 +3,5 @@
 public interface IWriter 
 {
 
-    void Write<T>(IEnumerable<T> items);
+    void Write<T>(IEnumerable<T> items,string filename);
 };

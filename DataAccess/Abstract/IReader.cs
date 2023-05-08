@@ -8,7 +8,9 @@ namespace DataAccess.Abstract
 {
     public interface IReader
     {
-    /*    IEnumerable<string> Read();*/
+  
     IEnumerable<T> Read<T>();
+  
     }
 }
+

@@ -11,26 +11,33 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             
-            IReader reader = new JsonReader(new MyPath().newjobs);
+           /* IReader reader = new JsonReader(new MyPath().mnames);*/
+            ICsvReader reader = new CsvReader(new MyPath().uscitiescsv);
             IEditor editor = new Editor();
-            IWriter writer = new JsonWriter(new MyPath().newjobsfp);
+            /*IWriter writer = new JsonWriter(new MyPath().constants);*/
+
+            List<string> firstColumnValues = new List<string>();
+            bool firstLine = true,secondLine=true;
             var x = reader.Read<string>();
-        /*    var z = editor.RemoveDuplicates(x);
-            try
+
+
+            foreach (var firstcol in x)
             {
-                writer.Write(z);
-                Console.WriteLine("done");
+                if (firstLine)
+                {
+                    firstLine = false;
+                    continue;
+                }
+                firstColumnValues.Add(firstcol[0]);
+
             }
-            catch (Exception e)
+
+            foreach (var mycol in firstColumnValues)
             {
-                Console.WriteLine(e);
-                throw;
+                Console.WriteLine(mycol);
             }
-          */
-        foreach (var ex in x)
-        {
-            Console.WriteLine(ex);
-        }
+
+
 
 
 
@@ -38,5 +45,5 @@ namespace ConsoleUI
 
 
         }
-    }
+}
 }

@@ -36,5 +36,4 @@ namespace DataAccess.Concrete.Reader
 
 
     }
-
 }

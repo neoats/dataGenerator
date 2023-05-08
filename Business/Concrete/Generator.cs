@@ -4,42 +4,38 @@ namespace Business.Concrete
 {
     public class Generator 
     {
-        private readonly Random _random;
-        private readonly HashSet<string> _myIds;
-        private int _count;
+        private readonly List<int> _generatedNumbers;
 
         public Generator()
         {
-            _random = new Random();
-            _myIds = new HashSet<string>();
-            _count = 0;
+            _generatedNumbers = new List<int>();
         }
 
         //refactor
-        public (long, int) Generate()
+       /* public List<T> Generate<T>()
         {
             string id = "";
-            id += _random.Next(1, 10);
+            id += Random.Shared.Next(1, 10);
             for (int i = 0; i < 11; i++)
             {
-                id += _random.Next(0, 10);
+                id += Random.Shared.Next(0, 10);
             }
 
-            while (_myIds.Contains(id))
+            while (_generatedNumbers.Contains(id))
             {
                 id = "";
-                id += _random.Next(1, 10);
+                id += Random.Shared.Next(1, 10);
                 for (int i = 0; i < 11; i++)
                 {
-                    id += _random.Next(0, 10);
+                    id += Random.Shared.Next(0, 10);
                 }
             }
 
-            _count++;
-            _myIds.Add(id);
-            return (Convert.ToInt32(id), _count);
+         
+          
+            return (Convert.ToInt32(id));
         }
-
+*/
        
 
     }
