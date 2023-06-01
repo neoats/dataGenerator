@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
+namespace DataAccess.Abstract.ReadAndWrite
 {
     public interface IReader
     {
-  
-    IEnumerable<T> Read<T>();
-  
+
+        IEnumerable<T> Read<T>();
+
     }
 }
 

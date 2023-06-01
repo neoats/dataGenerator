@@ -1,4 +1,4 @@
-﻿using DataAccess.Abstract;
+﻿using DataAccess.Abstract.ReadAndWrite;
 
 namespace DataAccess.Concrete.Reader;
 

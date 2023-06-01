@@ -1,4 +1,4 @@
-﻿namespace DataAccess.Abstract;
+﻿namespace DataAccess.Abstract.ReadAndWrite;
 
 public interface ICsvReader
 {

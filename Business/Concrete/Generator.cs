@@ -1,18 +1,23 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract.ReadAndWrite;
+using DataAccess.Constants;
+using System.Linq;
+using DataAccess.Concrete.Reader;
+using System;
 
 namespace Business.Concrete
 {
-    public class Generator 
+    public class Generator :IGenerator
     {
         private readonly List<int> _generatedNumbers;
-
+    
         public Generator()
         {
             _generatedNumbers = new List<int>();
         }
 
         //refactor
-       /* public List<T> Generate<T>()
+        public long GenerateId()
         {
             string id = "";
             id += Random.Shared.Next(1, 10);
@@ -21,7 +26,7 @@ namespace Business.Concrete
                 id += Random.Shared.Next(0, 10);
             }
 
-            while (_generatedNumbers.Contains(id))
+            while (_generatedNumbers.Contains((int)Convert.ToInt64(id)))
             {
                 id = "";
                 id += Random.Shared.Next(1, 10);
@@ -31,13 +36,22 @@ namespace Business.Concrete
                 }
             }
 
-         
-          
-            return (Convert.ToInt32(id));
+            long generatedId = Convert.ToInt64(id);
+            _generatedNumbers.Add((int)generatedId);
+            return generatedId;
         }
-*/
-       
+
+        public string GenerateMaleName()
+        {
+            IReader jmnames = new JsonReader(new MyPath().malenames);
+            var mnames = jmnames.Read<string>();
+
+            var randomName = mnames.ElementAt(Random.Shared.Next(mnames.Count()));
+
+            return randomName;
+        }
+
+
 
     }
-
 }
