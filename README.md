@@ -5,7 +5,8 @@
 		-Builder pattern when generating data for the generator
 		-Business classes have been created to organize data			?
 		-An ioc container style structure has been applied in the transition between layers
-		-Dataların kayıt edilmesi için CodeFirst yaklaşımı kullanılıp RepositoryPattern uygulandı
+		-DatalarÃ½n kayÃ½t edilmesi iÃ§in CodeFirst yaklaÃ¾Ã½mÃ½ kullanÃ½lÃ½p RepositoryPattern uygulandÃ½
 		-RepositoryPattern was applied by using CodeFirst approach to save data
 		-UnitTest was written for the generated data
+-Added azure webhook
 		
